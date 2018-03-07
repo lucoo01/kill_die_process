@@ -1,6 +1,12 @@
 # kill_die_process 定时清除 超时的进程
 
+## crontab -e
 ```
+0 */1 * * * source /crontab/kill_die_process.sh
+```
+----
+kill_die_process.sh
+```sh
 pids=`ps aux | grep /root/soft/docker/  | grep -v grep | awk '{print $2}'`
 for x in $pids;do
         times=`ps -p $x -o etimes=`
