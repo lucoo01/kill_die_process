@@ -5,7 +5,7 @@
 0 */1 * * * source /crontab/kill_die_process.sh
 ```
 ----
-kill_die_process.sh
+## kill_die_process.sh
 ```sh
 pids=`ps aux | grep /root/soft/docker/  | grep -v grep | awk '{print $2}'`
 for x in $pids;do
